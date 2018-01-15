@@ -1,0 +1,14 @@
+﻿<Window x:Class="caesarEncrypt.WinDecrypt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CaesarEncrypt" Height="449.041" Width="477">
+    <Grid>
+        <TextBox x:Name="txtDecrypt" HorizontalAlignment="Left" Height="143" Margin="10,45,0,0" TextWrapping="Wrap" Text="Put text to decrypt : " VerticalAlignment="Top" Width="449" AcceptsReturn="True"/>
+        <Button x:Name="btnDecrypt" Content="Decrypt" HorizontalAlignment="Left" Height="24" Margin="10,209,0,0" VerticalAlignment="Top" Width="137" Click="btnDecrypt_Click"/>
+        <TextBox x:Name="txtDecrypted" HorizontalAlignment="Left" Height="158" Margin="10,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="449" AcceptsReturn="True" IsReadOnly="True"/>
+        <TextBox x:Name="txtKey" HorizontalAlignment="Left" Height="24" Margin="163,209,0,0" TextWrapping="Wrap" Text="Key :" VerticalAlignment="Top" Width="179"/>
+        <Button x:Name="btnOpF" Content="Open .txt" HorizontalAlignment="Left" Margin="364,209,0,0" VerticalAlignment="Top" Width="75" Click="btnOpF_Click"/>
+        <Label x:Name="lblFileName" Content="Source File :" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="449"/>
+
+    </Grid>
+</Window>
