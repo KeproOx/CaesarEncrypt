@@ -210,39 +210,52 @@ namespace caesarEncrypt
 
         private void btnEncryptVig_Click(object sender, RoutedEventArgs e)
         {
-            //Variables
-            int idxList = 0;
-            char c;
-            int LetterA = 96;
-            int iEcart = 0;
-            int iEcartTotal = 0;
-            List<char> charList;
-            charList = new List<char>();
-            List<bool> bPositionLetter = new List<bool>(); //Permettra de savoir l'emplacement du mot dans le tableau
+           txtResult.Text = Encipher(txtText.Text, txtVigKey.Text);
+        }
+        private static int Mod(int a, int b)
+        {
+            return (a % b + b) % b;
+        }
 
-            while (idxList < 26*26)
+        private static string Cipher(string input, string key, bool encipher)
+        {
+            for (int i = 0; i < key.Length; ++i)
+                if (!char.IsLetter(key[i]))
+                    return null; // Error
+
+            string output = string.Empty;
+            int nonAlphaCharCount = 0;
+
+            for (int i = 0; i < input.Length; ++i)
             {
-                LetterA++;
-                iEcartTotal = LetterA + iEcart;
-                
-                c = (char)iEcartTotal;
-
-                if (c <= 122 && c > 96)
+                if (char.IsLetter(input[i]))
                 {
-                    charList.Add(c);
+                    bool cIsUpper = char.IsUpper(input[i]);
+                    char offset = cIsUpper ? 'A' : 'a';
+                    int keyIndex = (i - nonAlphaCharCount) % key.Length;
+                    int k = (cIsUpper ? char.ToUpper(key[keyIndex]) : char.ToLower(key[keyIndex])) - offset;
+                    k = encipher ? k : -k;
+                    char ch = (char)((Mod(((input[i] + k) - offset), 26)) + offset);
+                    output += ch;
                 }
                 else
                 {
-                    iEcart++;
-                    LetterA = 96;
-                    iEcartTotal = LetterA + iEcart;
-                    charList.Add(c);
+                    output += input[i];
+                    ++nonAlphaCharCount;
                 }
-                idxList++;
             }
-            txtResult.Text = charList[idxList].ToString();
 
-            
+            return output;
+        }
+
+        public static string Encipher(string input, string key)
+        {
+            return Cipher(input, key, true);
+        }
+
+        public static string Decipher(string input, string key)
+        {
+            return Cipher(input, key, false);
         }
     }
 }

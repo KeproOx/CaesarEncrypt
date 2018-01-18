@@ -10,12 +10,13 @@
         <TextBox x:Name="txtText" HorizontalAlignment="Left" Height="140" Margin="26,43,0,0" TextWrapping="Wrap" Text="Put your text here" VerticalAlignment="Top" Width="456" AcceptsReturn="True"/>
         <TextBox x:Name="txtKey" HorizontalAlignment="Left" Height="24" Margin="26,198,0,0" TextWrapping="Wrap" Text="Key : (1-26)" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnEncrypt" Content="Encrypt (Caesar method)" HorizontalAlignment="Left" Height="24" Margin="168,198,0,0" VerticalAlignment="Top" Width="187" Click="btnEncrypt_Click"/>
-        <Label x:Name="label1" Content="Encrypted text :" HorizontalAlignment="Left" Height="31" Margin="26,231,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label1" Content="Encrypted text :" HorizontalAlignment="Left" Height="24" Margin="26,243,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Height="24" Margin="374,198,0,0" VerticalAlignment="Top" Width="108" Click="btnSave_Click"/>
         <TextBox x:Name="txtResult" HorizontalAlignment="Left" Height="162" Margin="26,267,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="456" IsReadOnly="True"/>
         <Label x:Name="lblAlert" Content="" HorizontalAlignment="Center" Height="28" Margin="140,155,162,256" VerticalAlignment="Center" Width="215" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Button x:Name="btnShowWin" Content="Decrypt" HorizontalAlignment="Left" Height="24" Margin="374,232,0,0" VerticalAlignment="Top" Width="108" Click="btnShowWin_Click"/>
         <Button x:Name="btnEncryptVig" Content="Encrypt (Vigenère method)" HorizontalAlignment="Left" Height="24" Margin="168,232,0,0" VerticalAlignment="Top" Width="187" Click="btnEncryptVig_Click"/>
+        <TextBox x:Name="txtVigKey" HorizontalAlignment="Left" Height="24" Margin="26,227,0,0" TextWrapping="Wrap" Text="Key (A-Z) Vigenère" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
